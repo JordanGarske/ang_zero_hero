@@ -1,1 +1,4 @@
-<p>arena works!</p>
+
+<input #searchBoxOne id="search-box" (input)="search(searchBoxTwo.value , heroOne)" />
+<input #searchBoxTwo id="search-box" (input)="search(searchBoxTwo.value, heroTwo)" />
+<button *ngif="heroOne && heroTwo" (click)="fight()" >FIGHT</button>
