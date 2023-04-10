@@ -7,7 +7,7 @@ export class MessageService {
   messages: string[] = [];
 
   add(message: string) {
-    if(this.messages.length == 10){
+    if(this.messages.length > 10){
       this.messages.pop()
     }
     this.messages.push(message);

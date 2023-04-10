@@ -1,4 +1,10 @@
 
-<input #searchBoxOne id="search-box" (input)="search(searchBoxTwo.value , heroOne)" />
-<input #searchBoxTwo id="search-box" (input)="search(searchBoxTwo.value, heroTwo)" />
-<button *ngif="heroOne && heroTwo" (click)="fight()" >FIGHT</button>
+<input #searchBoxOne id="search-box" (input)="searchForHeroOne(searchBoxOne.value )" ([disabled])="heroOne.id != -1"  />\
+<button *ngIf="!(heroOne.id == -1) && !(heroTwo.id == -1)" (click)="fight()"  >FIGHT</button>
+<p></p>
+<p *ngIf="(heroOne.id == -1) || (heroTwo.id == -1)"> {{display}} </p>
+<input #searchBoxTwo id="search-box" (input)="searchForHeroTwo(searchBoxTwo.value)" ([disabled])="heroTwo.id != -1" />
+
+
+{{heroOne.id}}
+{{heroTwo.id}}

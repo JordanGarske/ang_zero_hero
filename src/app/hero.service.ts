@@ -6,8 +6,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Hero } from './hero';
 import { MessageService } from './message.service';
-
-
 @Injectable({ providedIn: 'root' })
 export class HeroService {
 
@@ -19,7 +17,8 @@ export class HeroService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+  ) { }
 
   /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
@@ -86,7 +85,6 @@ export class HeroService {
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }
-
   /** PUT: update the hero on the server */
   updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(

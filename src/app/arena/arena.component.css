@@ -1,0 +1,28 @@
+.container {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .search-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .search-boxes.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .container.move-to-fight {
+    transform: translateX(calc(50% - 200px));
+  }
+  
+  

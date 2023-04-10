@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
+import { Injectable } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -9,6 +9,9 @@ import { HeroService } from '../hero.service';
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: [ './hero-detail.component.css' ]
+})
+  @Injectable({
+  providedIn: 'root',
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
